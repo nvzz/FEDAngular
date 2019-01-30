@@ -1,0 +1,43 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle}}
+  </div>
+  <div class='card-body'>
+    
+    <div class='row'>
+      <div class='col-md-2'>Filter by:</div>
+      <div class='col-md-4'>
+        <input type='text'/>
+      </div>
+    </div>
+<!--
+    <div class='row'>
+      <div class='col-md-6'>
+        <h4>Filtered by: </h4>
+      </div>
+    </div>
+  -->
+    <div class='table-responsive'>
+      <table class='table' *ngIf='datos && datos.length'>
+        <thead>
+          <tr>
+            <th>Consumer ID</th>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Status</th>
+            <th>Member</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = 'let data of datos'> 
+            <td> {{data.consumerId}} </td>
+            <td> {{data.lastName | uppercase}} {{data.firstName | uppercase}} </td>
+            <td> {{data.dateOfBirth | date:'dd/MM/yyyy'}} </td>
+            <td> {{data.status}} </td>
+            <td> {{data.members}} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
